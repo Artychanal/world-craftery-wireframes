@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View World</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* --- Header --- */
+      .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #fff;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 24px;
+      }
+
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .main-nav a {
+        text-decoration: none;
+        color: #555;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      /* --- Main Content --- */
+      .view-world-container {
+        display: flex;
+        gap: 40px;
+        padding: 40px 20px;
+      }
+
+      /* Left Column: Map */
+      .map-section {
+        flex: 2;
+      }
+
+      .section-title {
+        font-size: 24px;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 20px;
+      }
+
+      .map-display {
+        width: 100%;
+        height: 500px;
+        background-color: #e9e9e9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+      }
+
+      .map-display svg {
+        width: 120px;
+        height: 120px;
+        fill: #cccccc;
+      }
+
+      /* Right Column: World Info */
+      .info-section {
+        flex: 1;
+      }
+
+      .info-group {
+        margin-bottom: 25px;
+      }
+
+      .info-label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-size: 16px;
+      }
+
+      .info-value {
+        font-size: 14px;
+        color: #555;
+      }
+
+      .info-value.placeholder {
+        font-style: italic;
+        color: #999;
+      }
+
+      .description-placeholder .line {
+        height: 10px;
+        background-color: #333;
+        margin-bottom: 10px;
+        border-radius: 2px;
+      }
+
+      .description-placeholder .line.short {
+        width: 80%;
+      }
+      .description-placeholder .line.medium {
+        width: 95%;
+      }
+      .description-placeholder .line.tiny {
+        width: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">Logo</div>
+      <nav class="main-nav">
+        <a href="#">Search</a>
+        <a href="#">Hub</a>
+        <a href="#">Account</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="view-world-container">
+        <section class="map-section">
+          <h1 class="section-title">Map</h1>
+          <div class="map-display">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                d="M448 80H64C28.7 80 0 108.7 0 144v224c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V144c0-35.3-28.7-64-64-64zM64 384V144h384v240H64zM256 224c-35.3 0-64 28.7-64 64s28.7 64 64 64 64-28.7 64-64-28.7-64-64-64zm128-80H128v80l64-64 128 128h128l-96-96z"
+              />
+            </svg>
+          </div>
+        </section>
+
+        <aside class="info-section">
+          <h2 class="section-title">World Info</h2>
+
+          <div class="info-group">
+            <span class="info-label">Name</span>
+            <p class="info-value">WorldTest</p>
+          </div>
+
+          <div class="info-group">
+            <span class="info-label">Description</span>
+            <div class="description-placeholder">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line medium"></div>
+              <div class="line"></div>
+              <div class="line short"></div>
+              <div class="line"></div>
+              <div class="line medium"></div>
+              <div class="line tiny"></div>
+            </div>
+          </div>
+
+          <div class="info-group">
+            <span class="info-label">Contributors</span>
+            <p class="info-value">example.box@gmail.com</p>
+          </div>
+
+          <div class="info-group">
+            <span class="info-label">Public / Private</span>
+            <p class="info-value placeholder">
+              &lt;World Visibility status&gt;
+            </p>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>

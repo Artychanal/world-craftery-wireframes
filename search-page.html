@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Page</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* --- Header --- */
+      .main-header {
+        display: flex;
+        justify-content: flex-end;
+        padding: 20px 0;
+        border-bottom: 1px solid #e0e0e0;
+        background-color: #fff;
+        margin-bottom: 30px;
+      }
+
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding-right: 50px;
+      }
+
+      .main-nav a {
+        text-decoration: none;
+        color: #555;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .main-nav a.active {
+        color: #d9534f;
+        border-bottom: 2px solid #d9534f;
+        padding-bottom: 4px;
+      }
+
+      /* --- Search Container --- */
+      .search-container {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 30px;
+        border: 1px solid #e0e0e0;
+      }
+
+      .search-bar {
+        position: relative;
+        margin-bottom: 30px;
+      }
+
+      .search-bar input {
+        width: 100%;
+        padding: 15px 15px 15px 50px; /* space for icon */
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+
+      .search-bar input:focus {
+        outline: none;
+        border-color: #888;
+      }
+
+      .search-bar svg {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        fill: #888;
+      }
+
+      /* --- Results List --- */
+      .results-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .result-item {
+        display: flex;
+        gap: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      .item-image-placeholder {
+        width: 120px;
+        height: 120px;
+        background-color: #e9e9e9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        flex-shrink: 0;
+      }
+
+      .item-image-placeholder svg {
+        width: 40px;
+        height: 40px;
+        fill: #ccc;
+      }
+
+      .item-content {
+        flex-grow: 1;
+      }
+
+      .item-content h3 {
+        margin: 0 0 15px 0;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .description-placeholder .line {
+        height: 10px;
+        background-color: #333;
+        margin-bottom: 12px;
+        border-radius: 2px;
+      }
+
+      .description-placeholder .line.short {
+        width: 80%;
+      }
+      .description-placeholder .line.medium {
+        width: 90%;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="main-nav">
+        <a href="#" class="active">Search</a>
+        <a href="#">Hub</a>
+        <a href="#">Account</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="search-container">
+        <div class="search-bar">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path
+              d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+            />
+          </svg>
+          <input type="text" placeholder="Search" />
+        </div>
+        <div class="results-list">
+          <div class="result-item">
+            <div class="item-image-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M448 80H64C28.7 80 0 108.7 0 144v224c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V144c0-35.3-28.7-64-64-64zM64 384V144h384v240H64zM256 224c-35.3 0-64 28.7-64 64s28.7 64 64 64 64-28.7 64-64-28.7-64-64-64zm128-80H128v80l64-64 128 128h128l-96-96z"
+                />
+              </svg>
+            </div>
+            <div class="item-content">
+              <h3>World Name</h3>
+              <div class="description-placeholder">
+                <div class="line"></div>
+                <div class="line medium"></div>
+                <div class="line short"></div>
+              </div>
+            </div>
+          </div>
+          <div class="result-item">
+            <div class="item-image-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M448 80H64C28.7 80 0 108.7 0 144v224c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V144c0-35.3-28.7-64-64-64zM64 384V144h384v240H64zM256 224c-35.3 0-64 28.7-64 64s28.7 64 64 64 64-28.7 64-64-28.7-64-64-64zm128-80H128v80l64-64 128 128h128l-96-96z"
+                />
+              </svg>
+            </div>
+            <div class="item-content">
+              <h3>World Name</h3>
+              <div class="description-placeholder">
+                <div class="line"></div>
+                <div class="line medium"></div>
+                <div class="line short"></div>
+              </div>
+            </div>
+          </div>
+          <div class="result-item">
+            <div class="item-image-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M448 80H64C28.7 80 0 108.7 0 144v224c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V144c0-35.3-28.7-64-64-64zM64 384V144h384v240H64zM256 224c-35.3 0-64 28.7-64 64s28.7 64 64 64 64-28.7 64-64-28.7-64-64-64zm128-80H128v80l64-64 128 128h128l-96-96z"
+                />
+              </svg>
+            </div>
+            <div class="item-content">
+              <h3>World Name</h3>
+              <div class="description-placeholder">
+                <div class="line"></div>
+                <div class="line medium"></div>
+                <div class="line short"></div>
+              </div>
+            </div>
+          </div>
+          <div class="result-item">
+            <div class="item-image-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M448 80H64C28.7 80 0 108.7 0 144v224c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V144c0-35.3-28.7-64-64-64zM64 384V144h384v240H64zM256 224c-35.3 0-64 28.7-64 64s28.7 64 64 64 64-28.7 64-64-28.7-64-64-64zm128-80H128v80l64-64 128 128h128l-96-96z"
+                />
+              </svg>
+            </div>
+            <div class="item-content">
+              <h3>World Name</h3>
+              <div class="description-placeholder">
+                <div class="line"></div>
+                <div class="line medium"></div>
+                <div class="line short"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

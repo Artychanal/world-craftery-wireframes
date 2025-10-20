@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Location</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* --- Header --- */
+      .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #fff;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 24px;
+      }
+
+      .main-nav {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .main-nav a {
+        text-decoration: none;
+        color: #555;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      /* --- Main Content --- */
+      .create-location-container {
+        padding: 40px 20px;
+      }
+
+      .page-title {
+        font-size: 28px;
+        font-weight: 600;
+        margin-top: 0;
+        margin-bottom: 30px;
+      }
+
+      .main-layout {
+        display: flex;
+        gap: 30px;
+      }
+
+      /* Image Section */
+      .image-gallery {
+        display: flex;
+        gap: 20px;
+        flex-basis: 45%;
+      }
+
+      .main-image-placeholder {
+        flex: 2;
+        height: 400px;
+        background-color: #e9e9e9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+      }
+
+      .main-image-placeholder svg {
+        width: 100px;
+        height: 100px;
+        fill: #cccccc;
+      }
+
+      .thumbnail-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .thumbnail-placeholder {
+        height: 190px;
+        background-color: #e9e9e9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+      }
+
+      .thumbnail-placeholder svg {
+        width: 50px;
+        height: 50px;
+        fill: #cccccc;
+      }
+
+      .add-image-card {
+        height: 190px;
+        border: 2px dashed #ccc;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: #777;
+        font-weight: 500;
+        font-size: 16px;
+        transition: border-color 0.3s, color 0.3s;
+      }
+
+      .add-image-card:hover {
+        border-color: #888;
+        color: #333;
+      }
+
+      /* Form Section */
+      .location-form {
+        flex-basis: 55%;
+      }
+
+      .form-row {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
+
+      .form-group {
+        flex: 1;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 8px;
+        font-size: 16px;
+      }
+
+      .form-group input[type="text"],
+      .form-group select {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 14px;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      .description-placeholder .line {
+        height: 10px;
+        background-color: #333;
+        margin-bottom: 12px;
+        border-radius: 2px;
+      }
+
+      .description-placeholder .line.short {
+        width: 80%;
+      }
+      .description-placeholder .line.medium {
+        width: 95%;
+      }
+
+      /* Action Buttons */
+      .action-buttons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #e0e0e0;
+      }
+
+      .btn {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .btn-primary {
+        background-color: #444;
+        color: #fff;
+      }
+
+      .btn-secondary {
+        background-color: #d9534f;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">Logo</div>
+      <nav class="main-nav">
+        <a href="#">Search</a>
+        <a href="#">Hub</a>
+        <a href="#">Account</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <div class="create-location-container">
+        <h1 class="page-title">Location</h1>
+        <div class="main-layout">
+          <section class="image-gallery">
+            <div class="main-image-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path
+                  d="M448 80H64C28.7 80 0 108.7 0 144v224c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V144c0-35.3-28.7-64-64-64zM64 384V144h384v240H64zM256 224c-35.3 0-64 28.7-64 64s28.7 64 64 64 64-28.7 64-64-28.7-64-64-64zm128-80H128v80l64-64 128 128h128l-96-96z"
+                />
+              </svg>
+            </div>
+            <div class="thumbnail-column">
+              <div class="thumbnail-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path
+                    d="M448 80H64C28.7 80 0 108.7 0 144v224c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V144c0-35.3-28.7-64-64-64zM64 384V144h384v240H64zM256 224c-35.3 0-64 28.7-64 64s28.7 64 64 64 64-28.7 64-64-28.7-64-64-64zm128-80H128v80l64-64 128 128h128l-96-96z"
+                  />
+                </svg>
+              </div>
+              <div class="add-image-card">+ New Image</div>
+            </div>
+          </section>
+
+          <section class="location-form">
+            <form>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="loc-name">Name</label>
+                  <input type="text" id="loc-name" name="loc-name" />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="loc-faction">Faction</label>
+                  <select id="loc-faction" name="loc-faction">
+                    <option>Choose Faction if any</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="loc-type">Type</label>
+                  <select id="loc-type" name="loc-type">
+                    <option>Choose Type</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Description</label>
+                  <div class="description-placeholder">
+                    <div class="line"></div>
+                    <div class="line medium"></div>
+                    <div class="line"></div>
+                    <div class="line short"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line medium"></div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </section>
+        </div>
+        <div class="action-buttons">
+          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary">Delete</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
