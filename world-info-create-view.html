@@ -225,9 +225,21 @@
               </button>
             </div>
             <div class="form-group">
-              <label id="toggleVisibility">Public / Private</label>
-              <button type="button" class="btn" onclick="">Toggle Public / Private</button>
+              <label id="toggleVisibility">Public</label>
+              <button type="button" class="btn" onclick="changeVisibility()">Toggle Public / Private</button>
             </div>
+
+            <script>
+              function changeVisibility(){
+                  const toggleLabel = document.getElementById("toggleVisibility");
+                  if(toggleLabel.innerHTML === "Public"){
+                    toggleLabel.innerHTML = "Private";
+                  }
+                  else if(toggleLabel.innerHTML === "Private"){
+                    toggleLabel.innerHTML = "Public";
+                  }
+              }
+            </script>
             <button type="submit" class="btn btn-create">Create</button>
           </form>
         </aside>
