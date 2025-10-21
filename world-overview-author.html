@@ -336,7 +336,7 @@
           <script>
             const sidebarNav = document.querySelectorAll(".sidebar-nav > li:not(.sidebar-title) > a");
             let sidebarNavActive = document.querySelector(".sidebar-nav > li:not(.sidebar-title) > a.active");
-            sidebarNav.forEach(x => addEventListener("click", (e) => {
+            sidebarNav.forEach((x) => x.addEventListener("click", (e) => {
               sidebarNavActive.classList.toggle("active");
               e.target.classList.toggle("active");
 
@@ -354,6 +354,16 @@
           </script>
           <div style="flex-grow: 1"></div>
           <ul class="sidebar-footer">
+            <li>
+              <a href="world-info-edit-view.html">
+                Edit
+              </a>
+            </li>
+            <li>
+              <a href="world-info-guest-view.html">
+                Info
+              </a>
+            </li>
             <li>
               <a href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
