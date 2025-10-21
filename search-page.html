@@ -52,6 +52,11 @@
         padding-bottom: 4px;
       }
 
+      a.result-item{
+        text-decoration: none;
+        color: black;
+      }
+
       /* --- Search Container --- */
       .search-container {
         background-color: #f9f9f9;
@@ -151,9 +156,9 @@
   <body>
     <header class="main-header">
       <nav class="main-nav">
-        <a href="#" class="active">Search</a>
-        <a href="#">Hub</a>
-        <a href="#">Account</a>
+        <a href="#" class="active">Search</a> 
+        <a href="hub-for-authorized-user.html" class="hub">Hub</a>
+        <a href="user-account.html">Account</a>
       </nav>
     </header>
 
@@ -168,7 +173,7 @@
           <input type="text" placeholder="Search" />
         </div>
         <div class="results-list">
-          <div class="result-item">
+          <a href="world-overview-guest.html" class="result-item">
             <div class="item-image-placeholder">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path
@@ -184,8 +189,8 @@
                 <div class="line short"></div>
               </div>
             </div>
-          </div>
-          <div class="result-item">
+          </a>
+          <a href="world-overview-guest.html" class="result-item">
             <div class="item-image-placeholder">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path
@@ -201,8 +206,8 @@
                 <div class="line short"></div>
               </div>
             </div>
-          </div>
-          <div class="result-item">
+          </a>
+          <a href="world-overview-guest.html" class="result-item">
             <div class="item-image-placeholder">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path
@@ -218,14 +223,14 @@
                 <div class="line short"></div>
               </div>
             </div>
-          </div>
-          <div class="result-item">
+          </a>
+          <a href="world-overview-guest.html" class="result-item">
             <div class="item-image-placeholder">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                 <path
                   d="M448 80H64C28.7 80 0 108.7 0 144v224c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V144c0-35.3-28.7-64-64-64zM64 384V144h384v240H64zM256 224c-35.3 0-64 28.7-64 64s28.7 64 64 64 64-28.7 64-64-28.7-64-64-64zm128-80H128v80l64-64 128 128h128l-96-96z"
                 />
-              </svg>
+              </svg>  
             </div>
             <div class="item-content">
               <h3>World Name</h3>
@@ -235,7 +240,7 @@
                 <div class="line short"></div>
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </main>

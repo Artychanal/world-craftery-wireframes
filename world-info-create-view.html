@@ -176,9 +176,9 @@
     <header class="main-header">
       <div class="logo">Logo</div>
       <nav class="main-nav">
-        <a href="#">Search</a>
-        <a href="#">Hub</a>
-        <a href="#">Account</a>
+        <a href="search-page.html">Search</a> 
+        <a href="hub-for-authorized-user.html" class="hub">Hub</a>
+        <a href="user-account.html">Account</a>
       </nav>
     </header>
 
@@ -198,7 +198,7 @@
 
         <aside class="info-section">
           <h2 class="section-title">World Info</h2>
-          <form>
+          <form action="world-overview-author.html">
             <div class="form-group">
               <label for="world-name">Name</label>
               <div style="display: flex; align-items: center; gap: 5px">
@@ -225,10 +225,21 @@
               </button>
             </div>
             <div class="form-group">
-              <label>Public / Private</label>
-              <button type="button" class="btn">Toggle Public / Private</button>
+              <label id="toggleVisibility">Public</label>
+              <button type="button" class="btn" onclick="changeVisibility()">Toggle Public / Private</button>
             </div>
 
+            <script>
+              function changeVisibility(){
+                  const toggleLabel = document.getElementById("toggleVisibility");
+                  if(toggleLabel.innerHTML === "Public"){
+                    toggleLabel.innerHTML = "Private";
+                  }
+                  else if(toggleLabel.innerHTML === "Private"){
+                    toggleLabel.innerHTML = "Public";
+                  }
+              }
+            </script>
             <button type="submit" class="btn btn-create">Create</button>
           </form>
         </aside>

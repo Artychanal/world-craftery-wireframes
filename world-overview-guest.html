@@ -175,6 +175,11 @@
         margin-bottom: 50px;
       }
 
+      .content-section a.item-card{
+        text-decoration: none;
+        color: #888;
+      }
+
       .section-title {
         font-size: 20px;
         font-weight: 600;
@@ -261,6 +266,10 @@
       .footer-links a:hover {
         text-decoration: underline;
       }
+
+      .hidden{
+        display: none;
+      }
     </style>
   </head>
   <body>
@@ -268,9 +277,9 @@
       <header class="top-header">
         <div class="logo-header">Logo</div>
         <nav class="header-nav">
-          <a href="#">Search</a>
-          <a href="#">Hub</a>
-          <a href="#">Account</a>
+          <a href="search-page.html">Search</a> 
+          <a href="hub-for-authorized-user.html" class="hub">Hub</a>
+          <a href="user-account.html">Account</a>
         </nav>
       </header>
       <div class="content-wrapper">
@@ -295,8 +304,35 @@
             <li><a href="#">Artifacts</a></li>
             <li><a href="#">Timelines</a></li>
           </ul>
+
+          <script>
+            const sidebarNav = document.querySelectorAll(".sidebar-nav>li:not(.sidebar-title)>a");
+            console.log(sidebarNav);
+            let sidebarNavActive = document.querySelector(".sidebar-nav>li:not(.sidebar-title)>a.active");
+            sidebarNav.forEach((x) => x.addEventListener("click", (e) => {
+              sidebarNavActive.classList.toggle("active");
+              e.target.classList.toggle("active");
+
+              sidebarNavActive = e.target;
+
+              let targetSectionId = "#" + e.target.innerHTML.toLowerCase() + "-section";
+
+              if(document.querySelector(targetSectionId + ".hidden") !== null){
+                document.querySelector(targetSectionId + ".hidden").classList.toggle("hidden");
+              }
+                
+              let listOfAllExceptTargetSection = document.querySelectorAll(".content-section:not(" + targetSectionId + "):not(.hidden)");
+              listOfAllExceptTargetSection.forEach(section => section.classList.toggle("hidden"));
+            }))
+          </script>
+
           <div style="flex-grow: 1"></div>
           <ul class="sidebar-footer">
+            <li>
+              <a href="world-info-guest-view.html">
+                Info
+              </a>
+            </li>
             <li>
               <a href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -322,7 +358,7 @@
         <main class="main-content">
           <h1 class="page-title">Test World</h1>
 
-          <section class="content-section">
+          <section id="maps-section" class="content-section">
             <h2 class="section-title">Maps</h2>
             <div class="map-placeholder">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -333,10 +369,10 @@
             </div>
           </section>
 
-          <section class="content-section">
+          <section id="continents-section" class="content-section">
             <h2 class="section-title">Continents</h2>
             <div class="items-grid">
-              <div class="item-card">
+              <a href="location-region-continent-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -345,8 +381,8 @@
                   </svg>
                 </div>
                 <p>Continent Name</p>
-              </div>
-              <div class="item-card">
+              </a>
+              <a href="location-region-continent-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -355,8 +391,8 @@
                   </svg>
                 </div>
                 <p>Continent Name</p>
-              </div>
-              <div class="item-card">
+              </a>
+              <a href="location-region-continent-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -365,14 +401,14 @@
                   </svg>
                 </div>
                 <p>Continent Name</p>
-              </div>
+              </a>
             </div>
           </section>
 
-          <section class="content-section">
+          <section id="regions-section" class="content-section">
             <h2 class="section-title">Regions</h2>
             <div class="items-grid">
-              <div class="item-card">
+              <a href="location-region-continent-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -381,8 +417,8 @@
                   </svg>
                 </div>
                 <p>Region Name</p>
-              </div>
-              <div class="item-card">
+              </a>
+              <a href="location-region-continent-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -391,8 +427,8 @@
                   </svg>
                 </div>
                 <p>Region Name</p>
-              </div>
-              <div class="item-card">
+              </a>
+              <a href="location-region-continent-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -401,14 +437,14 @@
                   </svg>
                 </div>
                 <p>Region Name</p>
-              </div>
+              </a>
             </div>
           </section>
 
-          <section class="content-section">
+          <section id="locations-section" class="content-section">
             <h2 class="section-title">Locations</h2>
             <div class="items-grid">
-              <div class="item-card">
+              <a href="location-region-continent-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -417,8 +453,8 @@
                   </svg>
                 </div>
                 <p>Location Name</p>
-              </div>
-              <div class="item-card">
+              </a>
+              <a href="location-region-continent-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -427,8 +463,8 @@
                   </svg>
                 </div>
                 <p>Location Name</p>
-              </div>
-              <div class="item-card">
+              </a>
+              <a href="location-region-continent-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -437,14 +473,14 @@
                   </svg>
                 </div>
                 <p>Location Name</p>
-              </div>
+              </a>
             </div>
           </section>
 
-          <section class="content-section">
+          <section id="fractions-section" class="content-section">
             <h2 class="section-title">Fractions</h2>
             <div class="items-grid">
-              <div class="item-card">
+              <a href="faction-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -453,8 +489,8 @@
                   </svg>
                 </div>
                 <p>Fraction Name</p>
-              </div>
-              <div class="item-card">
+              </a>
+              <a href="faction-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -463,8 +499,8 @@
                   </svg>
                 </div>
                 <p>Fraction Name</p>
-              </div>
-              <div class="item-card">
+              </a>
+              <a href="faction-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -473,14 +509,14 @@
                   </svg>
                 </div>
                 <p>Fraction Name</p>
-              </div>
+              </a>
             </div>
           </section>
 
-          <section class="content-section">
+          <section id="characters-section" class="content-section">
             <h2 class="section-title">Characters</h2>
             <div class="items-grid">
-              <div class="item-card">
+              <a href="character-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -489,8 +525,8 @@
                   </svg>
                 </div>
                 <p>Character Name</p>
-              </div>
-              <div class="item-card">
+              </a>
+              <a href="character-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -499,8 +535,8 @@
                   </svg>
                 </div>
                 <p>Character Name</p>
-              </div>
-              <div class="item-card">
+              </a>
+              <a href="character-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -509,13 +545,13 @@
                   </svg>
                 </div>
                 <p>Character Name</p>
-              </div>
+              </a>
             </div>
           </section>
-          <section class="content-section">
+          <section id="quests-section" class="content-section">
             <h2 class="section-title">Quests</h2>
             <div class="items-grid">
-              <div class="item-card">
+              <a href="quest-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -524,8 +560,8 @@
                   </svg>
                 </div>
                 <p>Quest Name</p>
-              </div>
-              <div class="item-card">
+              </a>
+              <a href="quest-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -534,8 +570,8 @@
                   </svg>
                 </div>
                 <p>Quest Name</p>
-              </div>
-              <div class="item-card">
+              </a>
+              <a href="quest-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -544,13 +580,13 @@
                   </svg>
                 </div>
                 <p>Quest Name</p>
-              </div>
+              </a>
             </div>
           </section>
-          <section class="content-section">
+          <section id="artifacts-section" class="content-section">
             <h2 class="section-title">Artifacts</h2>
             <div class="items-grid">
-              <div class="item-card">
+              <a href="artifact-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -559,8 +595,8 @@
                   </svg>
                 </div>
                 <p>Artifact Name</p>
-              </div>
-              <div class="item-card">
+              </a>
+              <a href="artifact-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -569,8 +605,8 @@
                   </svg>
                 </div>
                 <p>Artifact Name</p>
-              </div>
-              <div class="item-card">
+              </a>
+              <a href="artifact-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -579,13 +615,13 @@
                   </svg>
                 </div>
                 <p>Artifact Name</p>
-              </div>
+              </a>
             </div>
           </section>
-          <section class="content-section">
-            <h2 class="section-title">Timelines</h2>
+          <section id="timelines-section" class="content-section">
+            <h2 class="section-title">Timeline Group 1</h2>
             <div class="items-grid">
-              <div class="item-card">
+              <a href="event-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -593,9 +629,9 @@
                     />
                   </svg>
                 </div>
-                <p>Timeline Name</p>
-              </div>
-              <div class="item-card">
+                <p>Event Name</p>
+              </a>
+              <a href="event-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -603,9 +639,9 @@
                     />
                   </svg>
                 </div>
-                <p>Timeline Name</p>
-              </div>
-              <div class="item-card">
+                <p>Event Name</p>
+              </a>
+              <a href="event-info-guest-view.html" class="item-card">
                 <div class="image-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path
@@ -613,8 +649,8 @@
                     />
                   </svg>
                 </div>
-                <p>Timeline Name</p>
-              </div>
+                <p>Event Name</p>
+              </a>
             </div>
           </section>
         </main>

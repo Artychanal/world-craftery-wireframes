@@ -49,8 +49,10 @@
         font-weight: 500;
       }
 
-      .main-nav a.hub {
+      .main-nav a.active {
         color: #d9534f;
+        border-bottom: 2px solid #d9534f;
+        padding-bottom: 4px;
       }
 
       /* --- Hero Section --- */
@@ -187,9 +189,9 @@
     <header class="main-header container">
       <div class="logo">Logo</div>
       <nav class="main-nav">
-        <a href="#">Search</a>
-        <a href="#" class="hub">Hub</a>
-        <a href="#">Account</a>
+        <a href="search-page.html">Search</a> 
+        <a href="#" class="active">Hub</a>
+        <a href="user-account.html">Account</a>
       </nav>
     </header>
 
@@ -216,9 +218,9 @@
               Lorem ipsum dolor sit amet et delectus accommodare his consul
               copiosae.
             </p>
-            <a href="#" class="btn-card">Read more</a>
+            <a href="world-overview-author.html" class="btn-card">Read more</a>
           </div>
-          <a href="#" class="create-card" style="text-decoration: none">
+          <a href="world-info-create-view.html" class="create-card" style="text-decoration: none">
             <span class="plus-icon">+</span>
             <span>Create Your Own</span>
           </a>
@@ -241,7 +243,7 @@
               Lorem ipsum dolor sit amet et delectus accommodare his consul
               copiosae.
             </p>
-            <a href="#" class="btn-card">Read more</a>
+            <a href="world-overview-guest.html" class="btn-card">Read more</a>
           </div>
           <div class="world-card">
             <div class="card-image-placeholder">
@@ -256,7 +258,7 @@
               Lorem ipsum dolor sit amet et delectus accommodare his consul
               copiosae.
             </p>
-            <a href="#" class="btn-card">Read more</a>
+            <a href="world-overview-guest.html" class="btn-card">Read more</a>
           </div>
           <div class="world-card">
             <div class="card-image-placeholder">
@@ -271,13 +273,13 @@
               Lorem ipsum dolor sit amet et delectus accommodare his consul
               copiosae.
             </p>
-            <a href="#" class="btn-card">Read more</a>
+            <a href="world-overview-guest.html" class="btn-card">Read more</a>
           </div>
         </div>
       </section>
 
       <section class="cta-section">
-        <button class="btn-cta">Create your own</button>
+        <a href="world-info-create-view.html" class="btn-cta">Create your own</a>
       </section>
     </main>
   </body>
